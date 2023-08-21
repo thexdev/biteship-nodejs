@@ -1,10 +1,10 @@
 {
   "name": "@thexdev/biteship-nodejs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The unofficial NodeJS client for interacting with Biteship API.",
-  "main": "index.js",
+  "main": "./libs/index.js",
   "files": [
-    "libs/**/*"
+    "./libs"
   ],
   "scripts": {
     "format": "prettier --write .",
