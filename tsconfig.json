@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "incremental": false,
+    "declaration": true,
+    "outDir": "./libs",
+    "target": "es2016",
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src"]
+}
