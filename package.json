@@ -4,7 +4,7 @@
   "description": "The unofficial NodeJS client for interacting with Biteship API.",
   "main": "./libs/index.js",
   "files": [
-    "./libs"
+    "./libs/**/*"
   ],
   "scripts": {
     "format": "prettier --write .",
