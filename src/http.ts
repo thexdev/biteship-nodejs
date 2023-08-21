@@ -3,7 +3,7 @@ import { ApiKey, HTTPMethod } from './types';
 /**
  * This class is used to perform http request to Biteship API.
  */
-class Http {
+export class Http {
   private url: URL = new URL('https:/api.biteship.com');
 
   private method: HTTPMethod = 'GET';
@@ -48,5 +48,3 @@ class Http {
     return await response.json();
   }
 }
-
-export default Http;

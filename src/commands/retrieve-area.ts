@@ -1,6 +1,6 @@
 import Command from './command';
 
-class RetriveArea extends Command {
+export class RetrieveArea extends Command {
   execute(): Promise<Response> {
     const query = new URLSearchParams({
       countries: 'ID',
@@ -11,5 +11,3 @@ class RetriveArea extends Command {
     return this.http.get(`v1/maps/areas?${query.toString()}`);
   }
 }
-
-export = RetriveArea;

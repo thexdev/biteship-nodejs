@@ -1,7 +1,7 @@
 import Command from './commands/command';
 import { ApiKey } from './types';
 
-class Biteship {
+export class Biteship {
   protected apiKey: ApiKey;
 
   constructor(apiKey: ApiKey) {
@@ -12,5 +12,3 @@ class Biteship {
     return command.credential(this.apiKey).execute();
   }
 }
-
-export default Biteship;

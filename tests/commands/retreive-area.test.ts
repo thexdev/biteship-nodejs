@@ -1,6 +1,6 @@
 import { server, rest } from '../fixtures/server';
 import Command from '../../src/commands/command';
-import RetrieveArea from '../../src/commands/retrieve-area';
+import { RetrieveArea } from '../../src/commands/retrieve-area';
 import { baseUrl } from '../fixtures/base-url';
 
 describe('retrieve-area.ts', () => {

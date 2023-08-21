@@ -1,4 +1,4 @@
-import Http from '../http';
+import { Http } from '../http';
 import { ApiKey } from '../types';
 
 abstract class Command {
@@ -18,4 +18,4 @@ abstract class Command {
   abstract execute(): Promise<Response>;
 }
 
-export default Command;
+export = Command;
