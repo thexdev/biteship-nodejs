@@ -12,6 +12,8 @@ export class Http {
     'Content-Type': 'application/json',
   });
 
+  private body: string | null = null;
+
   private trim(path: string) {
     return path.replace(/[^a-zA-Z]/g, '');
   }
@@ -31,10 +33,16 @@ export class Http {
     return this;
   }
 
+  setBody(data: Record<string, unknown>): Http {
+    this.body = JSON.stringify(data);
+    return this;
+  }
+
   private run(): Promise<Response> {
     return fetch(this.url.href, {
       method: this.method,
       headers: this.headers,
+      body: this.body,
     });
   }
 
@@ -44,7 +52,7 @@ export class Http {
   }
 
   async post(url: string) {
-    const response = await this.setUrl(this.trim(url)).setMethod('POST').run();
+    const response = await this.setUrl(url).setMethod('POST').run();
     return await response.json();
   }
 }
