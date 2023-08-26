@@ -1,21 +1,37 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: ['main']
+  release:
+    types: [published]
 
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Git checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js (v20.x)
+        uses: actions/setup-node@v3
         with:
           node-version: 20.x
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm run build --if-present
+
+      - name: Build package
+        run: |
+          npm ci
+          npm run build --if-present
+
+      - name: Bump package version
+        run: |
+          git config --global user.name="GitHub"
+          git config --global user.email="<noreply@github.com>"
+          RELEASE=${{ github.event.release.name}}
+          NEXT_VERSION=${RELEASE} node ./scripts/tasks/bump-version.js
+          git add package.json
+          git commit -m "chore: bump package version to ${RELEASE}"
+
       - run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
