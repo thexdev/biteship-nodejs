@@ -25,8 +25,8 @@ jobs:
 
       - name: Bump package version
         run: |
-          git config --global user.name="GitHub"
-          git config --global user.email="<noreply@github.com>"
+          git config --global user.name "GitHub"
+          git config --global user.email "<noreply@github.com>"
           RELEASE=${{ github.event.release.name}}
           NEXT_VERSION=${RELEASE} node ./scripts/tasks/bump-version.js
           git add package.json
