@@ -55,4 +55,9 @@ export class Http {
     const response = await this.setUrl(url).setMethod('POST').run();
     return await response.json();
   }
+
+  async delete(url: string) {
+    const response = await this.setUrl(url).setMethod('DELETE').run();
+    return await response.json();
+  }
 }

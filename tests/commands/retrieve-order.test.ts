@@ -51,7 +51,7 @@ describe('retrieve-order.ts', () => {
         }),
       );
 
-      const command = new RetrieveOrder({id: 123});
+      const command = new RetrieveOrder({ id: 123 });
 
       const response = await invokerWithInvalidApiKey.send(command);
 
