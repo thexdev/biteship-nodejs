@@ -1,7 +1,5 @@
 # biteship-nodejs
 
-> 🚧 WORKING IN PROGRESS 🚧
-
 `@thexdev/biteship-nodejs` is unofficial NodeJS client for interacting with
 [Biteship API](https://biteship.com/en). Since Biteship does not provide package
 to interact with their API so, I created this simple wrapper for our convenient.
@@ -50,11 +48,13 @@ find it all on Biteship official documentation.
 ## List of Commands
 
 - `CreateOrder`
+- `DeleteOrder`
 - `RetrieveArea`
 - `RetrieveCourierRates`
 - `RetrieveOrder`
+- `RetrieveTracking`
 - `SearchRates`
-- More commands (soon)
+- `UpdateOrder`
 
 ## Want to Support Me?
 
